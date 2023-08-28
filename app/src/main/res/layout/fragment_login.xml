@@ -65,7 +65,8 @@
                     android:id="@+id/txtQuestion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
                     android:text="Don't have an account?" />
 
                 <TextView
@@ -78,15 +79,17 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnSignIn"
+                android:id="@+id/btnLogin"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:text="Sign in "
+                android:layout_marginBottom="48dp"
                 android:backgroundTint="@color/app_theme"
+                android:text="Login "
                 app:cornerRadius="26dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtTexPassword" />
 
@@ -103,24 +106,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/edtTexPassword" />
 
             <EditText
-                android:id="@+id/edtTexPassword"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/edit_text_background"
-                android:drawableLeft="@drawable/icon_lock"
-                android:drawablePadding="8dp"
-                android:ems="10"
-                android:textColor="@color/black"
-                android:hint="Password"
-                android:textColorHint="#45000000"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtTextEmail" />
-
-            <EditText
                 android:id="@+id/edtTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -130,14 +115,38 @@
                 android:drawablePadding="8dp"
                 android:ems="10"
                 android:hint="Email"
-                android:textColorHint="#41000000"
+                android:textColorHint="#70000000"
                 android:inputType="textPersonName"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/app_theme"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:hint="Password"
+                android:textColorHint="#7A000000"
+                app:startIconDrawable="@drawable/icon_lock"
+                app:startIconTint="@color/app_theme"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:layout_constraintTop_toBottomOf="@+id/edtTextEmail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtPassword"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/text_input_background"/>
+            </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

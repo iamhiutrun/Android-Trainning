@@ -16,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragmentSplashScreen.newInstance] factory method to
+ * Use the [SplashFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentSplashScreen : Fragment() {
+class SplashFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,9 +27,8 @@ class FragmentSplashScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_splash_screen, container, false)
-
         Handler(Looper.myLooper()!!).postDelayed({
-            findNavController().navigate(R.id.action_fragmentSplashScreen_to_fragment_login)
+            (activity as MainActivity).replaceFragment(LoginFragment(),false)
         },3000)
 
         return view

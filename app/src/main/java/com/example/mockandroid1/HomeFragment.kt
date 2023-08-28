@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragementHomeFragment.newInstance] factory method to
+ * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragementHomeFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
